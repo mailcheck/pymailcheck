@@ -26,13 +26,13 @@ Usage
 You can override or append the built-in list of domains, top-level domains,
 and/or second-level domains:
 
-======================== ==================================== =========
-Parameter              Defaults                               Example
-======================== ==================================== =========
-``domains``              ``pymailcheck.DOMAINS``              yahoo.com
-``top_level_domains``    ``pymailcheck.TOP_LEVEL_DOMAINS``    yahoo
-``second_level_domains`` ``pymailcheck.SECOND_LEVEL_DOMAINS`` com
-======================== ==================================== =========
+====================== ================================== =========
+Parameter              Defaults                           Example
+====================== ================================== =========
+`domains`              `pymailcheck.DOMAINS`              yahoo.com
+`top_level_domains`    `pymailcheck.TOP_LEVEL_DOMAINS`    yahoo
+`second_level_domains` `pymailcheck.SECOND_LEVEL_DOMAINS` com
+======================  ================================= =========
 
 .. code-block:: python
 
