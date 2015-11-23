@@ -17,6 +17,7 @@ Usage
 
 .. code-block:: python
 
+    >>> import pymailcheck
     >>> pymailcheck.suggest("test@example.con")
     {'domain': 'example.com', 'full': 'test@example.com', 'address': 'test'}
     >>> pymailcheck.suggest("test@example.org")
