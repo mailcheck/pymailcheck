@@ -30,7 +30,7 @@ DOMAINS = frozenset([
     "rocketmail.com",
     "rogers.com",
     "sbcglobal.net",
-    "shaw.ca"
+    "shaw.ca",
     "sky.com",
     "sympatico.ca",
     "telus.net",
