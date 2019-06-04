@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name="pymailcheck",
-    version="1.0.0",
+    version="1.0.1",
     description="Suggest corrections to user-misspelled email addresses",
     url="https://github.com/dbarlett/pymailcheck",
     author="Dylan Barlett",
@@ -14,7 +14,7 @@ setup(
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 2.7",
-        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3",
         "Topic :: Communications :: Email",
     ],
     keywords="email mailcheck",
