@@ -50,6 +50,13 @@ second_level_domains   pymailcheck.SECOND_LEVEL_DOMAINS com
     >>> pymailcheck.suggest("test@contosl.com", domains=custom_domains)
     {'domain': 'contoso.com', 'full': 'test@contoso.com', 'address': 'test'}
 
+.. code-block:: python
+
+    >>> def my_distance_function(s1, s2): ...
+    >>> # Have a look at `strsim` PyPI package, for example
+    >>> pymailcheck.suggest("test@contosl.com", distance_callable=my_distance_function)
+    {'domain': 'contoso.com', 'full': 'test@contoso.com', 'address': 'test'}
+
 Running Tests
 -------------
 
