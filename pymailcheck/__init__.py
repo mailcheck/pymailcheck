@@ -186,13 +186,15 @@ def find_closest_domain(
         domain,
         domains,
         threshold=DOMAIN_THRESHOLD,
-        distance_callable=distance_callable
+        distance_callable=sift3_distance
 ):
     """Find closest domain
 
     :param domain: domain
     :param domains: domains to compare to
     :param threshold: distance threshold
+    :param distance_callable: The distance function to be used,
+     default `sift3_distance`
     :returns: closest domain, or False if none is less than or equal to
     threshold
     :rtype: str, bool
