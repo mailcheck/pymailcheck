@@ -185,13 +185,16 @@ def split_email(email):
 def find_closest_domain(
         domain,
         domains,
-        threshold=DOMAIN_THRESHOLD
+        threshold=DOMAIN_THRESHOLD,
+        distance_callable=sift3_distance
 ):
     """Find closest domain
 
     :param domain: domain
     :param domains: domains to compare to
     :param threshold: distance threshold
+    :param distance_callable: The distance function to be used,
+     default `sift3_distance`
     :returns: closest domain, or False if none is less than or equal to
     threshold
     :rtype: str, bool
@@ -202,7 +205,7 @@ def find_closest_domain(
     for i in domains:
         if domain == i:
             return domain
-        dist = sift3_distance(domain, i)
+        dist = distance_callable(domain, i)
         if dist < min_dist:
             min_dist = dist
             closest_domain = i
@@ -217,7 +220,8 @@ def suggest(
         email,
         domains=DOMAINS,
         second_level_domains=SECOND_LEVEL_DOMAINS,
-        top_level_domains=TOP_LEVEL_DOMAINS
+        top_level_domains=TOP_LEVEL_DOMAINS,
+        distance_callable=sift3_distance
 ):
     """Suggest a corrected email address
 
@@ -227,10 +231,13 @@ def suggest(
      default SECOND_LEVEL DOMAINS
     :param top_level_domains: top-level domains to matcha against,
      default TOP_LEVEL_DOMAINS
+    :param distance_callable: The distance function to be used,
+     default `sift3_distance`
     :type email: str
     :type domains: list
     :type second_level_domains: iterable
     :type top_level_domains: iterable
+    :type distance_callable: callable
     :returns: email suggestion, or False
     :rtype: dict, bool
     """
@@ -247,7 +254,8 @@ def suggest(
 
     closest_domain = find_closest_domain(
         email_parts["domain"],
-        domains
+        domains,
+        distance_callable=distance_callable
     )
     if closest_domain:
         if closest_domain == email_parts["domain"]:
@@ -268,11 +276,13 @@ def suggest(
 
     closest_sld = find_closest_domain(
         email_parts["second_level_domain"],
-        second_level_domains
+        second_level_domains,
+        distance_callable=distance_callable
     )
     closest_tld = find_closest_domain(
         email_parts["top_level_domain"],
-        top_level_domains
+        top_level_domains,
+        distance_callable=distance_callable
     )
     if email_parts["domain"]:
         closest_domain = email_parts["domain"]
