@@ -5,7 +5,7 @@ setup(
     name="pymailcheck",
     version="1.1.0",
     description="Suggest corrections to user-misspelled email addresses",
-    url="https://github.com/dbarlett/pymailcheck",
+    url="https://github.com/mailcheck/pymailcheck/",
     author="Dylan Barlett",
     author_email="dylan.barlett@gmail.com",
     license="MIT",

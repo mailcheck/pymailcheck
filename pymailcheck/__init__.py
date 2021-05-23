@@ -1,7 +1,7 @@
 #!env/bin/python
 """Port of mailcheck.js
 
-https://github.com/dbarlett/pymailcheck/
+https://github.com/mailcheck/pymailcheck/
 """
 
 DOMAIN_THRESHOLD = 2
